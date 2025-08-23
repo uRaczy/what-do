@@ -9,7 +9,7 @@ export const HeroBanner = () => {
             conversions
           </h1>
 
-          <p className="mt-4 text-base text-pretty text-gray-700 sm:text-lg/relaxed">
+          <p className="mt-4 text-pretty text-base text-gray-700 sm:text-lg/relaxed">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque,
             nisi. Natus, provident accusamus impedit minima harum corporis
             iusto.
