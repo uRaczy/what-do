@@ -3343,45 +3343,42 @@ packages:
     dev: true
 
   /prettier-plugin-tailwindcss@0.6.14(prettier@3.6.2):
-    resolution:
-      {
-        integrity: sha512-pi2e/+ZygeIqntN+vC573BcW5Cve8zUB0SSAGxqpB4f96boZF4M3phPVoOFCeypwkpRYdi7+jQ5YJJUwrkGUAg==,
-      }
-    engines: { node: ">=14.21.3" }
+    resolution: {integrity: sha512-pi2e/+ZygeIqntN+vC573BcW5Cve8zUB0SSAGxqpB4f96boZF4M3phPVoOFCeypwkpRYdi7+jQ5YJJUwrkGUAg==}
+    engines: {node: '>=14.21.3'}
     peerDependencies:
-      "@ianvs/prettier-plugin-sort-imports": "*"
-      "@prettier/plugin-hermes": "*"
-      "@prettier/plugin-oxc": "*"
-      "@prettier/plugin-pug": "*"
-      "@shopify/prettier-plugin-liquid": "*"
-      "@trivago/prettier-plugin-sort-imports": "*"
-      "@zackad/prettier-plugin-twig": "*"
+      '@ianvs/prettier-plugin-sort-imports': '*'
+      '@prettier/plugin-hermes': '*'
+      '@prettier/plugin-oxc': '*'
+      '@prettier/plugin-pug': '*'
+      '@shopify/prettier-plugin-liquid': '*'
+      '@trivago/prettier-plugin-sort-imports': '*'
+      '@zackad/prettier-plugin-twig': '*'
       prettier: ^3.0
-      prettier-plugin-astro: "*"
-      prettier-plugin-css-order: "*"
-      prettier-plugin-import-sort: "*"
-      prettier-plugin-jsdoc: "*"
-      prettier-plugin-marko: "*"
-      prettier-plugin-multiline-arrays: "*"
-      prettier-plugin-organize-attributes: "*"
-      prettier-plugin-organize-imports: "*"
-      prettier-plugin-sort-imports: "*"
-      prettier-plugin-style-order: "*"
-      prettier-plugin-svelte: "*"
+      prettier-plugin-astro: '*'
+      prettier-plugin-css-order: '*'
+      prettier-plugin-import-sort: '*'
+      prettier-plugin-jsdoc: '*'
+      prettier-plugin-marko: '*'
+      prettier-plugin-multiline-arrays: '*'
+      prettier-plugin-organize-attributes: '*'
+      prettier-plugin-organize-imports: '*'
+      prettier-plugin-sort-imports: '*'
+      prettier-plugin-style-order: '*'
+      prettier-plugin-svelte: '*'
     peerDependenciesMeta:
-      "@ianvs/prettier-plugin-sort-imports":
+      '@ianvs/prettier-plugin-sort-imports':
         optional: true
-      "@prettier/plugin-hermes":
+      '@prettier/plugin-hermes':
         optional: true
-      "@prettier/plugin-oxc":
+      '@prettier/plugin-oxc':
         optional: true
-      "@prettier/plugin-pug":
+      '@prettier/plugin-pug':
         optional: true
-      "@shopify/prettier-plugin-liquid":
+      '@shopify/prettier-plugin-liquid':
         optional: true
-      "@trivago/prettier-plugin-sort-imports":
+      '@trivago/prettier-plugin-sort-imports':
         optional: true
-      "@zackad/prettier-plugin-twig":
+      '@zackad/prettier-plugin-twig':
         optional: true
       prettier-plugin-astro:
         optional: true
@@ -3410,11 +3407,8 @@ packages:
     dev: false
 
   /prettier@3.6.2:
-    resolution:
-      {
-        integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==,
-      }
-    engines: { node: ">=14" }
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: false
 
