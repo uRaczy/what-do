@@ -1,6 +1,9 @@
 "use client";
+
 import { useState } from "react";
-import { DarkModeToggle, HeroBanner } from "@/src/components/index";
+
+import { DarkModeToggle } from "@/src/components/Atoms";
+import { HeroBanner } from "@/src/components/Organisms";
 
 export default function Test() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -10,7 +13,7 @@ export default function Test() {
 
   return (
     <>
-      <DarkModeToggle isDarkMode={isDarkMode} darkModeHandle={darkModeHandle} />
+      <DarkModeToggle />
       <HeroBanner />
     </>
   );

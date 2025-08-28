@@ -1,20 +1,18 @@
 import clsx from "clsx";
 
-type Props = {
-  isDarkMode: boolean;
-  darkModeHandle: () => void;
-};
+import { useDarkMode } from "@/utils/index";
 
-export const DarkModeToggle = ({ isDarkMode, darkModeHandle }: Props) => {
+export const DarkModeToggle = () => {
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
   return (
-    <div className="flex w-40 bg-gray-700" onClick={darkModeHandle}>
+    <div className="flex w-40 bg-gray-700" onClick={toggleDarkMode}>
       <div className="text-[#bfcc0b]">Sun</div>
       <div
         className={clsx(
           `w-10 text-center ${isDarkMode ? "text-black" : "text-yellow-400"}`,
         )}
       >
-        O
+        {isDarkMode ? "☀️" : "🌙"}
       </div>
       <div>Moon</div>
     </div>
