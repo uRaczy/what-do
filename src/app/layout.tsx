@@ -1,6 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
+
+import { Navbar } from "../components/Organisms";
 
 import type { Metadata } from "next";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,9 +29,46 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script id="dark-mode-script" strategy="beforeInteractive">
+          {
+            //!  Resolve flashing
+            //TODO: Read about Next Scripts and add inline or setInnerHTML code for dark mode
+            //* Source: https://nextjs.org/docs/pages/guides/scripts
+            //
+            `
+              try {
+                console.log('setting theme from localstorage')
+
+                const theme = localStorage.getItem('theme');
+                 
+                if(theme === 'dark' || !!theme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');  
+                }
+              } catch(e) {}
+            `
+          }
+        </Script>
+        {/* <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){
+                const theme = localStorage.getItem('theme');
+                 
+                if(theme === 'dark' || !!theme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');  
+                }
+        }())`,
+          }}
+        /> */}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
