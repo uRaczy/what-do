@@ -1,5 +1,4 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 
 import { Navbar } from "../components/Organisms";
 
@@ -28,42 +27,43 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      {/* INVESTIGATE why INLINE works <SCRIPT> doesnt */}
       <head>
-        <Script id="dark-mode-script" strategy="beforeInteractive">
+        {/* <Script id="dark-mode-script" strategy="beforeInteractive">
           {
             //!  Resolve flashing
             //TODO: Read about Next Scripts and add inline or setInnerHTML code for dark mode
             //* Source: https://nextjs.org/docs/pages/guides/scripts
-            //
+            //if(theme === 'dark' || !!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
             `
               try {
                 console.log('setting theme from localstorage')
-
-                const theme = localStorage.getItem('theme');
-                 
-                if(theme === 'dark' || !!theme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                console.log(localStorage.getItem("theme"));
+                const theme = localStorage?.getItem('theme');
+                if(theme === 'dark' || !theme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                   document.documentElement.classList.add('dark');
-                } else {
-                  document.documentElement.classList.remove('dark');  
+                } else if(theme === 'light' || !theme && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                  document.documentElement.classList.remove('dark');
                 }
               } catch(e) {}
             `
           }
-        </Script>
-        {/* <script
+        </Script> */}
+        <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){
-                const theme = localStorage.getItem('theme');
-                 
-                if(theme === 'dark' || !!theme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            __html: `(
+            function() {
+              const theme = localStorage?.getItem('theme');
+                if(theme === 'dark' || !theme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                   document.documentElement.classList.add('dark');
-                } else {
-                  document.documentElement.classList.remove('dark');  
+                } else if(theme === 'light' || !theme && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                  document.documentElement.classList.remove('dark');
                 }
-        }())`,
+            }    
+            ())`,
           }}
-        /> */}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
