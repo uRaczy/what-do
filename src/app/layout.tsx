@@ -28,38 +28,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* INVESTIGATE why INLINE works <SCRIPT> doesnt */}
       <head>
-        {/* <Script id="dark-mode-script" strategy="beforeInteractive">
-          {
-            //!  Resolve flashing
-            //TODO: Read about Next Scripts and add inline or setInnerHTML code for dark mode
-            //* Source: https://nextjs.org/docs/pages/guides/scripts
-            //if(theme === 'dark' || !!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
-            `
-              try {
-                console.log('setting theme from localstorage')
-                console.log(localStorage.getItem("theme"));
-                const theme = localStorage?.getItem('theme');
-                if(theme === 'dark' || !theme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                  document.documentElement.classList.add('dark');
-                } else if(theme === 'light' || !theme && window.matchMedia('(prefers-color-scheme: light)').matches) {
-                  document.documentElement.classList.remove('dark');
-                }
-              } catch(e) {}
-            `
-          }
-        </Script> */}
         <script
+          id="dark-mode-script"
           dangerouslySetInnerHTML={{
             __html: `(
             function() {
-              const theme = localStorage?.getItem('theme');
-                if(theme === 'dark' || !theme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                  document.documentElement.classList.add('dark');
-                } else if(theme === 'light' || !theme && window.matchMedia('(prefers-color-scheme: light)').matches) {
-                  document.documentElement.classList.remove('dark');
-                }
+              try {
+                const theme = localStorage.getItem('theme');
+                  if(theme === 'dark' || !theme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.classList.add('dark');
+                  } else if(theme === 'light' || !theme && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                    document.documentElement.classList.remove('dark');
+                  }
+              } catch(e) {}
             }    
             ())`,
           }}
