@@ -1,4 +1,4 @@
-import { DarkModeToggle } from "../Atoms";
+import { DarkModeToggle } from "../../Atoms";
 
 export const Navbar = () => {
   return (
