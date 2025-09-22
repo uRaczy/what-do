@@ -1,27 +1,32 @@
+//! For testing only
+"use client";
+
+import { EventButton } from "@/components/Atoms";
+
 export default function Home() {
   return (
     <main className="flex h-full flex-col items-center justify-center gap-8">
-      <div className="rounded-md border border-white p-4">
-        <div className="flex flex-col items-center gap-2 md:min-w-48 lg:min-w-32">
+      <div className="md:w-3/4 lg:w-2/3 xl:w-1/2 2xl:w-[1000px]">
+        <div className="flex w-full flex-col items-center gap-2 rounded-md border border-white p-4">
           <label htmlFor="todo" className="text-left">
             Add your ToDo
           </label>
-          <div className="flex flex-row">
+          <div className="flex w-full flex-row">
             <input
               className="w-full rounded-l-sm px-3 py-1 text-slate-800 outline-none"
               type="text"
               name="todo"
             />
-            <button className="rounded-r-sm bg-blue-600 px-5 py-1">ADD</button>
+            <EventButton title="Add point" onClick={() => console.log("hi")} />
           </div>
         </div>
-      </div>
-      <div className="rounded-md border border-white p-4">
-        <ul className="flex flex-col gap-4">
-          <li>Lorem ipsum dolor sit amet.</li>
-          <li>Id suscipit porro numquam consectetur.</li>
-          <li>Voluptatum nostrum consectetur ea possimus?</li>
-        </ul>
+        <div className="w-full rounded-md border border-white p-4">
+          <ul className="flex flex-col gap-4">
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Id suscipit porro numquam consectetur.</li>
+            <li>Voluptatum nostrum consectetur ea possimus?</li>
+          </ul>
+        </div>
       </div>
     </main>
   );
