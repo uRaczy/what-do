@@ -16,7 +16,7 @@ export const TextInput = ({
     <input
       type="text"
       value={value}
-      className={`p4 ${className}`}
+      className={`text-light w-full px-4 ${className}`}
       onChange={(e) => handleChange(e.target.value)}
       onSubmit={onSubmit}
     />

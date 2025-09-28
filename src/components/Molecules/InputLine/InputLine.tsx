@@ -13,7 +13,7 @@ export const InputLine = ({ handleSubmit }: Props) => {
   };
 
   return (
-    <div>
+    <div className="flex">
       <TextInput handleChange={handleChange} value={value} />
       <EventButton
         title="Submit"
