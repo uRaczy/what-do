@@ -1,10 +1,11 @@
-"use client";
-
 type Props = {
+  className?: string;
   title: string;
   onClick: () => void;
-  className?: string;
 };
+
+//* Krok 1: Stworzyć działającą molekułe i listę ze zwykłym stanem z hooka
+//* Krok 2: Stworzyć działającą niezależną listę korzystając ze state managera
 
 export const EventButton = ({ title, onClick, className }: Props) => {
   return (

@@ -1,13 +1,13 @@
 //! For testing only
 "use client";
 
-import { EventButton } from "@/components/Atoms";
+import { Todo } from "../components/Organisms";
 
 export default function Home() {
   return (
     <main className="flex h-full flex-col items-center justify-center gap-8">
       <div className="md:w-3/4 lg:w-2/3 xl:w-1/2 2xl:w-[1000px]">
-        <div className="flex w-full flex-col items-center gap-2 rounded-md border border-white p-4">
+        {/* <div className="flex w-full flex-col items-center gap-2 rounded-md border border-white p-4">
           <label htmlFor="todo" className="text-left">
             Add your ToDo
           </label>
@@ -26,7 +26,8 @@ export default function Home() {
             <li>Id suscipit porro numquam consectetur.</li>
             <li>Voluptatum nostrum consectetur ea possimus?</li>
           </ul>
-        </div>
+        </div> */}
+        <Todo />
       </div>
     </main>
   );
