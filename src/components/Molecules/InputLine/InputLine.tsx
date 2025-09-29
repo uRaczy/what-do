@@ -24,8 +24,8 @@ export const InputLine = ({ handleSubmit }: Props) => {
           handleSubmit(value);
           setValue("");
         }}
-        type="primary"
-        rounded="right"
+        variant="primary"
+        rounding="right"
       >
         Submit
       </EventButton>
