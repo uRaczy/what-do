@@ -14,14 +14,21 @@ export const InputLine = ({ handleSubmit }: Props) => {
 
   return (
     <div className="flex">
-      <TextInput handleChange={handleChange} value={value} />
+      <TextInput
+        handleChange={handleChange}
+        value={value}
+        className="rounded-l-lg"
+      />
       <EventButton
-        title="Submit"
         onClick={() => {
           handleSubmit(value);
           setValue("");
         }}
-      />
+        type="primary"
+        rounded="right"
+      >
+        Submit
+      </EventButton>
     </div>
   );
 };

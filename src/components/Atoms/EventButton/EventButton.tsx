@@ -1,19 +1,34 @@
 type Props = {
+  children: React.ReactNode;
   className?: string;
-  title: string;
   onClick: () => void;
+  type: "primary" | "secondary";
+  rounded: "both" | "left" | "right";
 };
 
-//* Krok 1: Stworzyć działającą molekułe i listę ze zwykłym stanem z hooka
-//* Krok 2: Stworzyć działającą niezależną listę korzystając ze state managera
-
-export const EventButton = ({ title, onClick, className }: Props) => {
+export const EventButton = ({
+  children,
+  onClick,
+  className,
+  type,
+  rounded,
+}: Props) => {
+  const base = "cursor-pointer px-6 py-2.5 whitespace-nowrap";
+  const _type = {
+    primary: "bg-blue-700 hover:bg-blue-800 active:bg-blue-800 text-light",
+    secondary: "bg-gray-300 hover:bg-gray-400 active:bg-gray-400 text-dark",
+  };
+  const _rounded = {
+    both: "rounded-md",
+    left: "rounded-l-md",
+    right: "rounded-r-md",
+  };
   return (
     <button
       onClick={onClick}
-      className={`whitespace-nowrap rounded-md bg-blue-700 px-6 py-2.5 text-gray-100 ${className}`}
+      className={`${base} ${_type[type]} ${_rounded[rounded]} ${className}`}
     >
-      {title}
+      {children}
     </button>
   );
 };
